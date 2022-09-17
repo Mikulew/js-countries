@@ -1,4 +1,4 @@
-import { renderCountriesList } from "./utils/dom";
+import { renderCountriesList } from "./utils/dom.js";
 const API_URL_ALL = "https://restcountries.com/v3.1/all";
 
 let countries;
