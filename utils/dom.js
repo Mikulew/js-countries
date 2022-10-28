@@ -1,8 +1,9 @@
-const createFlagImageElement = (url) => {
+const createFlagImageElement = ({ flagUrl, name }) => {
     const imageContainerElement = document.createElement('div');
     const imageElement = document.createElement('img');
 
-    imageElement.src = url;
+    imageElement.src = flagUrl;
+    imageElement.alt = `${name} flag`;
     imageContainerElement.appendChild(imageElement)
 
     return imageContainerElement;
@@ -32,7 +33,7 @@ const createCountryElement = (country) => {
     countryName.classList.add('country-name');
     countryName.innerText = country.name;
 
-    countryElement.appendChild(createFlagImageElement(country.flagUrl));
+    countryElement.appendChild(createFlagImageElement(country));
     countryContainer.appendChild(countryName);
     countryContainer.appendChild(createDescriptionElement("Population", country.population));
     countryContainer.appendChild(createDescriptionElement("Region", country.region));

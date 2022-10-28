@@ -2,6 +2,7 @@
     --color-text: hsl(200, 15%, 8%);
     --color-input: hsl(0, 0%, 52%);
     --color-background: hsl(0, 0%, 98%);
+    --color-header-background: hsl(0, 0%, 100%);
 }
 
 * {
@@ -13,11 +14,33 @@
 body {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
+    background: var(--color-background);
 }
 
-main, header {
+header {
+    margin-bottom: 32px;
+    background: var(--color-header-background);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto; 
+    padding: 32px 0 64px;
     max-width: 1280px;
+}
+
+#theme-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 0 32px;
     margin: 0 auto;
+    max-width: 1280px;
 }
 
 ul {
@@ -25,6 +48,12 @@ ul {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     list-style: none;
     gap: 75px;
+}
+
+li {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 10px 10px -10px var(--color-text);
 }
 
 li img {
@@ -40,4 +69,23 @@ li img {
 
 .country-info-container {
     padding: 20px 10px;
+    box-shadow: 
+}
+
+@media screen and (max-width: 1000px) {
+    ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    ul {
+        grid-template-columns: 1fr;
+    }
 }
