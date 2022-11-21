@@ -3,6 +3,7 @@
     --color-input: hsl(0, 0%, 52%);
     --color-background: hsl(0, 0%, 98%);
     --color-header-background: hsl(0, 0%, 100%);
+    --border-radius: 10px;
 }
 
 * {
@@ -51,7 +52,7 @@ ul {
 }
 
 li {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 1px 10px 10px -10px var(--color-text);
 }
@@ -69,8 +70,21 @@ li img {
 
 .country-info-container {
     padding: 20px 10px;
-    box-shadow: 
 }
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#query, #region {
+    background-color: var(--color-background);
+    box-shadow: 1px 10px 10px -10px var(--color-text);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+}
+
 
 @media screen and (max-width: 1000px) {
     ul {
